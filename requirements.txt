@@ -3,3 +3,5 @@ pandas
 Flask
 pyowm
 gunicorn
+sklearn
+datetime
