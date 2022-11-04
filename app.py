@@ -49,8 +49,8 @@ def predict():
     humidity = api[1]
     actualtemp = api[2]
     N = request.form.get('nitro')
-    K = request.form.get('phos')
-    P = request.form.get('potas')
+    K = request.form.get('potas')
+    P = request.form.get('phos')
     pH = request.form.get('pH')
 
     input_query = np.array([[N, P, K, actualtemp, humidity, pH, rainfall]])
