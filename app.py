@@ -59,6 +59,8 @@ def predict():
     input_query = np.array([[N, P, K, actualtemp, humidity, pH, rainfall]])
     result = model.predict(input_query)[0]
     return jsonify({'crop': result})
+
+
 @app.route('/rainfall',methods=['POST'])
 def rainfall():
     rai = []
@@ -66,7 +68,7 @@ def rainfall():
     num  = request.form.get('day')
     city = request.form.get('city')
     city = city.capitalize()
-    url = 'https://api.weatherapi.com/v1/forecast.json?key=e997e759eb8f4d5c805100222232301&q=' + city + '&days=' + num
+    url = 'https://api.weatherapi.com/v1/forecast.json?key=0c4e45c25eef409485265300230702&q=' + city + '&days=' + num
     res = requests.get(url)
     data = res.json()
 
@@ -109,7 +111,7 @@ def rainfall():
                 else:
                     delta = datetime.timedelta(days=1)
                     start_date += delta
-                url1 = 'http://api.weatherapi.com/v1/future.json?key=e997e759eb8f4d5c805100222232301&q=' + city + '&dt=' + str(
+                url1 = 'http://api.weatherapi.com/v1/future.json?key=0c4e45c25eef409485265300230702&q=' + city + '&dt=' + str(
                     start_date)
                 res1 = requests.get(url1)
                 data1 = res1.json()
