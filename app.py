@@ -68,7 +68,7 @@ def rainfall():
     num  = request.form.get('day')
     city = request.form.get('city')
     city = city.capitalize()
-    url = 'https://api.weatherapi.com/v1/forecast.json?key=0c4e45c25eef409485265300230702&q=' + city + '&days=' + num
+    url = 'https://api.weatherapi.com/v1/forecast.json?key=8fc9af2d4e5340c2ba765015232905&q=' + city + '&days=' + num
     res = requests.get(url)
     data = res.json()
 
